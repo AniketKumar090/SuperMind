@@ -16,7 +16,7 @@ struct HomeieView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width, height: 250)
                         .ignoresSafeArea(edges: .top)
-                        .position(x: UIScreen.main.bounds.width/2, y: 125)
+                        .position(x: UIScreen.main.bounds.width/2, y: 120)
                         .overlay(
                             
                             VStack {
