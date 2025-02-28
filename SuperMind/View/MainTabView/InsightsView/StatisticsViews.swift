@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 
-
 struct StatisticsViewOne : View {
     var body: some View {
         VStack {
@@ -95,8 +94,6 @@ struct StatisticsViewTwo : View {
     }
 }
 
-
-
 struct StatisticsViewThree : View {
     var body: some View {
         VStack {
@@ -143,6 +140,5 @@ struct StatisticsViewThree : View {
                         .stroke(Color(red: 0.23, green: 0.22, blue: 0.25), lineWidth: 1)
                         .fill(Color(red: 0.16, green: 0.13, blue: 0.20))
                 )
-               
     }
 }

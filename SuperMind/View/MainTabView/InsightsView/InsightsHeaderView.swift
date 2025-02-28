@@ -8,8 +8,6 @@ struct InsightsHeader:View{
                     .font(.system(size: 20))
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                
-                
             }
             
             Button(action: {}) {

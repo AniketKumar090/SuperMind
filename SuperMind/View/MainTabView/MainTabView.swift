@@ -1,13 +1,9 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selectedTab: Tab = .library
+    @State private var selectedTab: AppTab = .library
     @State private var isTabViewSticky: Bool = false
     @State private var tabSelectionViewHeight: CGFloat = 0
-    
-    enum Tab {
-        case library, insights
-    }
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -19,30 +15,25 @@ struct MainTabView: View {
                     VStack(spacing: 10) {
                         
                         ProfileHeaderView(selectedTab: $selectedTab)
-                            .padding(.horizontal, 4)
-                        
+                            .padding(.horizontal,4)
                         StatsCardsView()
                             .padding(.top, 8)
                     }
                     .background(GeometryReader { geometry in
                         Color.clear
                             .onChange(of: geometry.frame(in: .global).minY) { yOffset in
-                                // Calculate when the TabSelectionView has scrolled out of view
                                 let threshold = -tabSelectionViewHeight
                                 isTabViewSticky = yOffset < threshold
-                                
                             }
                     })
-                                    
+                    
                     TabSelectionView(selectedTab: $selectedTab)
                         .background(Color(red: 0.06, green: 0.02, blue: 0.13))
                         .frame(maxWidth: .infinity)
-                        
                         .padding(.top)
                         .background(GeometryReader { geometry in
                             Color.clear
                                 .onAppear {
-                                  
                                     tabSelectionViewHeight = geometry.size.height + 30
                                 }
                         })
@@ -68,9 +59,8 @@ struct MainTabView: View {
     }
 }
 
-
 struct TabSelectionView: View {
-    @Binding var selectedTab: MainTabView.Tab
+    @Binding var selectedTab: AppTab
     
     var body: some View {
         HStack(spacing: 0) {

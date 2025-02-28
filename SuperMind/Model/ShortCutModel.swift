@@ -5,3 +5,8 @@ struct Item: Identifiable {
     let name: String
     let iconName: String
 }
+
+enum AppTab {
+    case library
+    case insights
+}

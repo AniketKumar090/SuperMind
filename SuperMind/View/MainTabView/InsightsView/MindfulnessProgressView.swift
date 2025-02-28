@@ -5,8 +5,6 @@ struct MindfulnessProgressView: View {
         ZStack {
             Image("Rectangle")
                 .resizable()
-              //  .frame(width: UIScreen.main.bounds.width ,height: 85)
-              //  .padding(.horizontal)
             HStack {
                 VStack(alignment: .leading) {
                     HStack {

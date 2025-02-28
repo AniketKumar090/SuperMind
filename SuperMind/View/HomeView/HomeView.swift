@@ -1,4 +1,3 @@
-
 import Foundation
 import SwiftUI
 struct HomeieView: View {
@@ -202,7 +201,7 @@ struct HomeieView: View {
                 onSave: { savedItems in
                     viewModel.saveSelectedItems(savedItems)
                 },
-                viewModel: viewModel // Pass the viewModel here
+                viewModel: viewModel 
             )
             .presentationDetents([.medium])
         }

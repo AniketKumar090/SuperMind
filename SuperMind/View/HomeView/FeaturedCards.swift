@@ -1,10 +1,3 @@
-//
-//  FeaturedCards.swift
-//  SuperMind
-//
-//  Created by Aniket Kumar on 26/02/25.
-//
-
 import SwiftUI
 
 struct FeaturedCardOne: View {

@@ -7,7 +7,7 @@ struct ExploreTabView: View {
         ("Manage Emotions", AnyView(ManageEmotionsCard())),
         ("Journey Progress", AnyView(JourneyProgressCard())),
         ("Freedom Series", AnyView(MeditationCardTwo().padding(.leading))),
-        ("Workplace Anxiety", AnyView(RecentlyPlayedCard(duration: "5 min"))),
+        ("Workplace Anxiety", AnyView(RecentlyPlayedCard(duration: "5 mins"))),
         ("Music Series", AnyView(FeaturedCardTwo())),
         ("Meditation Series", AnyView(FeaturedCardOne().padding(.trailing))),
         ("Workout Series", AnyView(FeaturedCardThree().padding(.leading)))

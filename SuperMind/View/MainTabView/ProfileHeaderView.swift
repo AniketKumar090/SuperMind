@@ -1,9 +1,9 @@
 import SwiftUI
 struct ProfileHeaderView: View {
-    @Binding var selectedTab: MainTabView.Tab
+    @Binding var selectedTab: AppTab
+    
     var body: some View {
         HStack {
-           
             ZStack {
                 Circle()
                     .fill(Color(red: 0.00, green: 0.32, blue: 0.29))

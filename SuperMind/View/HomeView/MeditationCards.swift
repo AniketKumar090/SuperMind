@@ -10,10 +10,6 @@ struct MeditationCardOne: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 160, height: 160)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
-                
-                
-              
             }
             
             Text("Meditation · 10 Mins")
@@ -64,8 +60,7 @@ struct MeditationCardTwo: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
                     .padding(5)
-                  
-            }
+             }
             
             Text("Meditation Series")
                 .font(.system(size: 14,weight: .regular))
