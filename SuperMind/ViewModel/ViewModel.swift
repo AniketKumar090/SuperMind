@@ -1,11 +1,9 @@
 import Foundation
-import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @Published var isSheetPresented = false
     @Published var selectedItems: [String] = ["Meditation", "Workout", "Sleep"]
     @Published var isExpanded = false
-    
     
     private var allItemsTuple = [
         ("Meditation", "Meditation"),
@@ -21,23 +19,32 @@ class HomeViewModel: ObservableObject {
         ("Journal", "Notebook")
     ]
     
+    @Published var savedShortcuts: [String] = [] {
+        didSet {
+            // Save the updated shortcuts to UserDefaults whenever it changes
+            UserDefaults.standard.set(savedShortcuts, forKey: "SavedShortcuts")
+        }
+    }
     
     var allItems: [Item] {
         allItemsTuple.map { Item(name: $0.0, iconName: $0.1) }
     }
     
-    @Published var savedShortcuts: [String] = []
+    init() {
+        // Load saved shortcuts from UserDefaults during initialization
+        if let savedShortcuts = UserDefaults.standard.stringArray(forKey: "SavedShortcuts") {
+            self.savedShortcuts = savedShortcuts
+            reorderItems()
+        } else {
+            // Default shortcuts if no saved data exists
+            self.savedShortcuts = ["Meditation", "Workout", "Sleep"]
+        }
+    }
     
     func reorderItems() {
         let savedItems = allItemsTuple.filter { savedShortcuts.contains($0.0) }
         let otherItems = allItemsTuple.filter { !savedShortcuts.contains($0.0) }
         allItemsTuple = savedItems + otherItems
-    }
-    
-    func sortedItems() -> [Item] {
-        return allItems.sorted {
-            selectedItems.contains($0.name) && !selectedItems.contains($1.name)
-        }
     }
     
     func displayedItems() -> [Item] {
