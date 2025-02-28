@@ -1,4 +1,4 @@
-# Supermind
+# SuperMind
 
 Supermind is a modern meditation and mindfulness application designed to help users manage their emotions, build consistent practice habits, and improve mental wellbeing. With personalized meditation sessions, progress tracking, and a variety of mindfulness exercises, Supermind offers a comprehensive solution for mental clarity and better performance.
 
@@ -61,6 +61,7 @@ open SuperMind.xcodeproj
 - LazyVGrid/LazyHGrid - For efficient scrolling collections
 - Safe Area Handling - Proper edge-to-edge design implementation
 - Responsive Layout - Dynamic sizing for different device screens
+- UserDefaults - Lightweight persistence for saving user preferences and app state
   
 ## Requirements
 
